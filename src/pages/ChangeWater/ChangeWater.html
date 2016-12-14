@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>水換え</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>水換え管理</h3>
+
+  <div *ngIf="changeWaterDates">
+    <calendar [eventSource]="changeWaterDates">
+    </calendar>
+  </div>
+
+  <button ion-button secondary menuToggle>Menu</button>
+</ion-content>
