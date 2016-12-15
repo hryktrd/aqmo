@@ -17,14 +17,13 @@ export class ChangeWater implements OnInit{
 
   }
   private changeWaterDates: ChangeWaterDate[];
-  calendar = {
-    "mode": 'month',
-    "currentDate": new Date()
-  };
-
+  public event = {
+    month: '1990-02-19',
+    timeStarts: '07:43',
+    timeEnds: '1990-02-20'
+  }
   ngOnInit() {
     this.changeWaterDateService.getChangeWaterDates().then(changeWaterDates => this.changeWaterDates = changeWaterDates).then(()=>console.log(this.changeWaterDates.length));
-    this.calendar.mode = 'month';
   }
 
 }
