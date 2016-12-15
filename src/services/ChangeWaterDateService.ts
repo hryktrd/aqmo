@@ -10,9 +10,9 @@ export class ChangeWaterDateService{
 }
 
 export const ChangeWaterDatesMock: ChangeWaterDate[]= [
-    {"startTime": new Date(Date.UTC(2016, 12, 3)), title: "test1", allDay: true},
-    {"startTime": new Date(Date.UTC(2016, 12, 8)), title: "test2", allDay: true},
-    {"startTime": new Date(Date.UTC(2016, 12, 14)), title: "", allDay: true}
+    {"startTime": new Date(Date.UTC(2016, 12, 3)), "endTime": new Date(Date.UTC(2016, 12, 3)), title: "test1", allDay: true},
+    {"startTime": new Date(Date.UTC(2016, 12, 8)), "endTime": new Date(Date.UTC(2016, 12, 3)),title: "test2", allDay: true},
+    {"startTime": new Date(Date.UTC(2016, 12, 14)), "endTime": new Date(Date.UTC(2016, 12, 14)),title: "", allDay: true}
 ]
 
 

@@ -1,4 +1,4 @@
-import {Component, OnInit, NgModule} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
@@ -16,11 +16,10 @@ export class ChangeWater implements OnInit{
   constructor(public navCtrl: NavController, private changeWaterDateService: ChangeWaterDateService) {
 
   }
-  changeWaterDates: ChangeWaterDate[];
+  private changeWaterDates: ChangeWaterDate[];
 
   ngOnInit() {
-    this.changeWaterDateService.getChangeWaterDates().then(changeWaterDates => this.changeWaterDates = changeWaterDates);
+    this.changeWaterDateService.getChangeWaterDates().then(changeWaterDates => this.changeWaterDates = changeWaterDates).then(()=>console.log(this.changeWaterDates.length));
   }
-
 
 }

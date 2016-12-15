@@ -9,9 +9,24 @@
 
 <ion-content padding>
   <h3>水換え管理</h3>
+  <div *ngIf="changeWaterDates && changeWaterDates.length">
+    {{changeWaterDates.length}}
+  </div>
 
-  <div *ngIf="changeWaterDates">
+  <div *ngIf="changeWaterDates && changeWaterDates.length">
+    <div *ngFor="let d of changeWaterDates">
+      {{d.startTime.getFullYear()}}
+      {{d.endTime.getFullYear()}}
+    </div>
     <calendar [eventSource]="changeWaterDates">
+      [calendarMode]="calendar.mode"
+      [currentDate]="calendar.currentDate"
+      (onCurrectDateChanged)="onCurrentDateChanged($event)"
+      (onRangeChanged)="reloadSource(startTime, endTime)"
+      (onEventSelected)="onEventSelected($event)"
+      (onTitleChanged)="onViewTitleChanged($event)"
+      (onTimeSelected)="onTimeSelected($event)"
+      step="30">
     </calendar>
   </div>
 
