@@ -1,22 +1,33 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>水換え</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>水換え</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>水換え管理</h3>
+    <h3>水換え管理</h3>
+    <ion-list>
+        <ion-item>
+            <ion-datetime displayFormat="YYYY/M/D" pickerFormat="YYYY M D"
+                          [(ngModel)]="event.month"></ion-datetime>
+            <ion-label>実施日</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-datetime displayFormat="YYYY/M/D" pickerFormat="YYYY M D"
+                          [(ngModel)]="event.month"></ion-datetime>
+            <ion-label>実施日</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-datetime displayFormat="YYYY/M/D" pickerFormat="YYYY M D"
+                          [(ngModel)]="event.month"></ion-datetime>
+            <ion-label>実施日</ion-label>
+        </ion-item>
+    </ion-list>
 
-  <ion-item>
 
-    <ion-datetime displayFormat="YYYY/M/D" pickerFormat="YYYY M D" [(ngModel)]="event.timeStarts"></ion-datetime>
-    <ion-label>Start Time</ion-label>
-  </ion-item>
-
-
-
-  <button ion-button secondary menuToggle>Menu</button>
+    <button ion-button secondary menuToggle>Menu</button>
 </ion-content>
+
