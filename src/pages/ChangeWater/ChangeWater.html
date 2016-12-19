@@ -10,10 +10,10 @@
 <ion-content padding>
     <h3>水換え管理</h3>
     <ion-list>
-        <ng-container *ngFor="let changeWaterDate of changeWaterDates">
+        <ng-container *ngFor="let Date of Dates">
             <ion-item >
                 <ion-datetime displayFormat="YYYY/M/D" pickerFormat="YYYY M D"
-                              [(ngModel)]="changeWaterDate.date"></ion-datetime>
+                              [(ngModel)]="Date.date"></ion-datetime>
                 <ion-label>水換え実施日</ion-label>
             </ion-item>
         </ng-container>

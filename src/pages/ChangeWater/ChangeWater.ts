@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {ChangeWaterDateService} from "../../services/ChangeWaterDateService";
+import {MaintDateService} from "../../services/MaintDateService";
+import {MaintDate} from '../../app/MaintDate';
 import * as moment from 'moment'
 
 @Component({
     selector: 'change-water',
     templateUrl: 'ChangeWater.html',
-    providers: [ChangeWaterDateService]
+    providers: [MaintDateService]
 })
 
 export class ChangeWater implements OnInit {
@@ -15,30 +16,21 @@ export class ChangeWater implements OnInit {
         "date": this.todayDate
     };
 
-    constructor(public navCtrl: NavController, private changeWaterDateService: ChangeWaterDateService) {
+    constructor(public navCtrl: NavController, private maintDateService: MaintDateService) {
 
     }
 
-    private changeWaterDates = [
-        {
-            "date": '2016-02-19',
-        },
-        {
-            "date": '2016-03-19',
-        },
-        {
-            "date": '2016-04-19',
-        },
-    ];
+    private Dates: MaintDate[];
 
     ngOnInit(){
-        // this.changeWaterDateService.getChangeWaterDates().then(changeWaterDates => this.changeWaterDates = changeWaterDates).then(() => console.log(this.changeWaterDates.length));
+        this.maintDateService.getChangeWaterDates().then(changeWaterDates => this.Dates = changeWaterDates);
     }
 
     addChangeWaterDate(){
-        this.changeWaterDates.push({
-            "date": this.newChangeWater.date
+        this.Dates.push({
+            "date": this.newChangeWater.date,
+            "kind": "changeWater"
         });
-        console.log(this.changeWaterDates);
+        console.log(this.Dates);
     }
 }
