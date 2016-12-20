@@ -12,10 +12,10 @@ export class MeasResultService{
 }
 
 export const MeasResultsMock: MeasResult[] = [
-    {"date": "2016-06-19", "kind": "changeWater", "value": 6.0, "comment": "test"},
-    {"date": "2016-06-19", "kind": "changeWater", "value": 7.0, "comment": ""},
-    {"date": "2016-06-19", "kind": "changeWater", "value": 6.5, "comment": ""},
-    {"date": "2016-06-19", "kind": "changeWater", "value": 6.2, "comment": ""},
+    {"date": "2016-06-19", "kind": "PH", "value": 6.0, "comment": "test"},
+    {"date": "2016-06-19", "kind": "PH", "value": 7.0, "comment": ""},
+    {"date": "2016-06-19", "kind": "KH", "value": 6.5, "comment": ""},
+    {"date": "2016-06-19", "kind": "GH", "value": 6.2, "comment": ""},
 ]
 
 

@@ -9,14 +9,38 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header>
-      Action
-    </ion-list-header>
-    <ion-item>Terminator II</ion-item>
-    <ion-item>The Empire Strikes Back</ion-item>
-    <ion-item>Blade Runner</ion-item>
+    <ng-container *ngFor="let result of measResults">
+      <ion-list-header>
+        {{result.date}}-{{result.kind}}
+      </ion-list-header>
+      <ion-item>
+        <p>{{result.value}}</p>
+        <p>{{result.comment}}</p>
+      </ion-item>
+    </ng-container>
+      <ion-list-header>
+        <ion-datetime displayFormat="YYYY/M/D" pickerFormat="YYYY M D"
+                      [(ngModel)]="newMeasResult.date"></ion-datetime>
+        <ion-label>測定日</ion-label>
+      </ion-list-header>
+      <ion-item>
+          <ion-label>対象</ion-label>
+          <ion-select [(ngModel)]="newMeasResult.kind">
+              <ion-option value="TEMP" selected="true">水温</ion-option>
+              <ion-option value="PH">PH</ion-option>
+              <ion-option value="KH">KH</ion-option>
+              <ion-option value="GH">GH</ion-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>測定結果</ion-label>
+        <ion-input type="number" [(ngModel)]="newMeasResult.value" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>コメント（任意）</ion-label>
+        <ion-input type="text" [(ngModel)]="newMeasResult.comment"></ion-input>
+      </ion-item>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+
+  <button ion-button secondary (click)="addMeasResult()">保存</button>
 </ion-content>
