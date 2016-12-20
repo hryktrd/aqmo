@@ -1,14 +1,14 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { Page2 } from '../pages/page2/page2';
+import { MeasWater } from '../pages/MeasWater/MeasWater';
 import {ChangeWater} from "../pages/ChangeWater/ChangeWater";
 
 @NgModule({
   declarations: [
     MyApp,
     ChangeWater,
-    Page2,
+    MeasWater,
     ChangeWater,
   ],
   imports: [
@@ -18,7 +18,7 @@ import {ChangeWater} from "../pages/ChangeWater/ChangeWater";
   entryComponents: [
     MyApp,
     ChangeWater,
-    Page2
+    MeasWater
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

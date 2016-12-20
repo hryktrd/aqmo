@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { Page2 } from '../pages/page2/page2';
+import { MeasWater } from '../pages/MeasWater/MeasWater';
 import {ChangeWater} from "../pages/ChangeWater/ChangeWater";
 
 
@@ -22,7 +22,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: '水換え', component: ChangeWater },
-      { title: '水質測定', component: Page2 }
+      { title: '水質測定', component: MeasWater }
     ];
 
   }
