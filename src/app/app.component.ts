@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { Device } from 'ionic-native';
 
 import { MeasWater } from '../pages/MeasWater/MeasWater';
 import {ChangeWater} from "../pages/ChangeWater/ChangeWater";
@@ -33,6 +34,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
+   
+  console.log(Device.device.platform);// returns an object containing device uuid,version, platform, manufacturer ...
+
     });
   }
 
