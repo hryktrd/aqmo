@@ -35,8 +35,6 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
    
-  console.log(Device.device.platform);// returns an object containing device uuid,version, platform, manufacturer ...
-
     });
   }
 
