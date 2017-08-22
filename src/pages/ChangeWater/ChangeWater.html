@@ -9,6 +9,12 @@
 
 <ion-content padding>
     <h3>水換え管理</h3>
+    <ion-item>
+        <ion-label>水槽選択</ion-label>
+        <ion-select [(ngModel)]="tankListService.selectedTank">
+            <ion-option *ngFor="let tank of tanks" [value]="tank">{{tank.name}}</ion-option>
+        </ion-select>
+    </ion-item>
     <ion-list>
         <ng-container *ngFor="let Date of Dates">
             <ion-item >

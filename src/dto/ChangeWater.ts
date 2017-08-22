@@ -1,7 +1,7 @@
 /**
- * 水槽情報
+ * 水換え情報
  */
-export class Tank {
+export class ChangeWater {
     public id: number;
     public name: string;
     public memo?: string;

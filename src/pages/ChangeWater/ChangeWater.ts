@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {MaintDateService} from "../../services/MaintDateService";
+import {MaintDateService} from "../../services/MaintDate.service";
 import {MaintDate} from '../../app/MaintDate';
 import * as moment from 'moment'
+import {Tank} from "../../dto/Tank";
+import {TankListService} from "../../services/tank-list.service";
 
 @Component({
     selector: 'change-water',
@@ -11,16 +13,17 @@ import * as moment from 'moment'
 })
 
 export class ChangeWater implements OnInit {
-    private todayDate = moment().format('YYYY-MM-DD');
-    private newChangeWater = {
+    todayDate = moment().format('YYYY-MM-DD');
+    newChangeWater = {
         "date": this.todayDate
     };
+    tanks: Tank[];
 
-    constructor(public navCtrl: NavController, private maintDateService: MaintDateService) {
-
+    constructor(public navCtrl: NavController, private maintDateService: MaintDateService, private tankListService: TankListService) {
+        this.tanks = this.tankListService.tanks;
     }
 
-    private Dates: MaintDate[];
+    Dates: MaintDate[];
 
     ngOnInit(){
         this.maintDateService.getChangeWaterDates().then(changeWaterDates => this.Dates = changeWaterDates);
@@ -33,4 +36,5 @@ export class ChangeWater implements OnInit {
         });
         console.log(this.Dates);
     }
+
 }
